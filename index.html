@@ -89,5 +89,20 @@
   </footer>
 
   <script src="script.js"></script>
+<script>
+  // Aguarda a página carregar
+  window.addEventListener('load', function() {
+    // Se houver hash na URL (ex: #features)
+    if (window.location.hash) {
+      const element = document.querySelector(window.location.hash);
+      if (element) {
+        // Ajusta a rolagem considerando cabeçalho fixo (100px)
+        window.scrollTo(0, element.offsetTop - 100);
+      }
+    }
+  });
+</script>
+
 </body>
 </html>
+
