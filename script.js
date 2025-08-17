@@ -100,17 +100,8 @@ window.addEventListener('resize', () => {
 });
 // Inicializar o carrossel 
 
-document.addEventListener("DOMContentLoaded", function () {
-  if (window.location.hash) {
-    window.scrollTo(0, 0);
-    setTimeout(function () {
-      const element = document.querySelector(window.location.hash);
-      if (element) {
-        window.scrollTo(0, element.offsetTop - 100); // ajuste 100 conforme altura do cabeçalho
-      }
-    }, 0);
-  }
-});
+
+
 
 
 
