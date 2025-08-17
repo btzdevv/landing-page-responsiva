@@ -90,19 +90,24 @@
 
   <script src="script.js"></script>
 <script>
-  // Aguarda a página carregar
   window.addEventListener('load', function() {
-    // Se houver hash na URL (ex: #features)
+    // Sempre inicia a página do topo
+    window.scrollTo(0, 0);
+
+    // Se tiver hash na URL, rola até o elemento considerando cabeçalho
     if (window.location.hash) {
       const element = document.querySelector(window.location.hash);
       if (element) {
-        // Ajusta a rolagem considerando cabeçalho fixo (100px)
-        window.scrollTo(0, element.offsetTop - 100);
+        setTimeout(() => {
+          window.scrollTo(0, element.offsetTop - 100); // ajuste 100 conforme altura do cabeçalho
+        }, 50); // pequeno delay para garantir que o navegador terminou de rolar
       }
     }
   });
 </script>
 
+
 </body>
 </html>
+
 
