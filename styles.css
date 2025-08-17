@@ -144,11 +144,15 @@ section {
   line-height: 1.6;
 }
 
+
+/* Footer Ajustado */
 footer {
   background: var(--dark);
   color: #fff;
   padding: 60px 20px;
   text-align: center;
+  position: relative;  /* necessário para z-index funcionar */
+  z-index: 2000;       /* maior que header e carrossel */
 }
 
 footer a {
@@ -163,11 +167,18 @@ footer a {
   font-size: 1.1rem;
   box-shadow: 0 6px 20px rgba(249,115,22,0.35);
   transition: all 0.3s ease;
+  position: relative;  /* garante que clique funcione */
+  z-index: 2001;       /* acima do footer */
 }
 
 footer a:hover {
   background: #ea580c;
   transform: translateY(-2px);
+}
+
+/* Espaço extra no final da página */
+body {
+  padding-bottom: 200px; /* garante que o footer fique totalmente visível e clicável */
 }
 
 /* Responsividade */
@@ -284,3 +295,7 @@ button.next { right: 20px; }
 @media (min-width: 1024px) {
   .carousel-item { min-width: 33.33%; }
 }
+
+
+
+
