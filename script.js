@@ -7,19 +7,6 @@ const dotsContainer = document.querySelector('.carousel-dots');
 let index = 0;
 let autoPlay;
 
-document.addEventListener("DOMContentLoaded", function () {
-  if (window.location.hash) {
-    window.scrollTo(0, 0);
-    setTimeout(function () {
-      const element = document.querySelector(window.location.hash);
-      if (element) {
-        window.scrollTo(0, element.offsetTop - 100); // ajuste 100 conforme altura do cabeçalho
-      }
-    }, 0);
-  }
-});
-
-
 // Clonar primeiros e últimos itens para efeito infinito
 const firstClone = items[0].cloneNode(true);
 const lastClone = items[items.length - 1].cloneNode(true);
@@ -112,4 +99,18 @@ window.addEventListener('resize', () => {
   updateCarousel();
 });
 // Inicializar o carrossel 
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.location.hash) {
+    window.scrollTo(0, 0);
+    setTimeout(function () {
+      const element = document.querySelector(window.location.hash);
+      if (element) {
+        window.scrollTo(0, element.offsetTop - 100); // ajuste 100 conforme altura do cabeçalho
+      }
+    }, 0);
+  }
+});
+
+
 
